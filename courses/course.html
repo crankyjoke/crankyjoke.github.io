@@ -2,11 +2,185 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>My Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            margin-top: 60px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .term-section {
+            margin-bottom: 60px;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .course-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .course-desc {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .course-date {
+            font-size: 13px;
+            color: #888;
+            margin-top: 10px;
+        }
+        .nav-button{
+            display:inline-block;
+            margin-top:32px;
+            padding:14px 28px;
+            background-color:#0077cc;
+            color:#fff;
+            text-decoration:none;
+            border-radius:12px;
+            font-weight:600;
+            transition:background-color .2s ease, transform .15s ease;
+        }
+        .nav-button:hover{
+            background-color:#005fa3;
+            transform:translateY(-2px);
+        }
+        .nav-button:active{
+            transform:translateY(0);
+        }
+
+        @media(max-width:640px){
+            .card{padding:40px 24px}
+            h1{font-size:2.2rem}
+        }
+    </style>
 </head>
 <body>
-    <p>
-        1111111
-    </p>
+<h1>Courses I Took</h1>
+
+<div class="term-section">
+    <h2>Fall 2024</h2>
+    <div class="course-grid">
+        <div class="course-card">
+            <div class="course-title">ECE 150</div>
+            <div class="course-desc">C/C++ Object oriented programming</div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-title">ECE 192</div>
+            <div class="course-desc">STM-32 project studio</div>
+        </div>
+
+
+        <div class="course-card">
+            <div class="course-title">ECE 105</div>
+            <div class="course-desc">Classical mechanics</div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-title">MATH 115</div>
+            <div class="course-desc">Linear Algebra 1</div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-title">MATH 117</div>
+            <div class="course-desc">Calculus 1</div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-title">ECE 190</div>
+            <div class="course-desc">Engineering practice</div>
+        </div>
+
+
+        <div class="course-card">
+            <div class="course-title">ENGL 192</div>
+            <div class="course-desc">Communication and technical writing</div>
+        </div>
+
+    </div>
+
+
+</div>
+
+<div class="term-section">
+    <h2>Winter 2025</h2>
+    <div class="course-grid">
+        <div class="course-card">
+            <div class="course-title">CO 250</div>
+            <div class="course-desc">Linear optimization, Integer Optimization, Non-linear Optimization</div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="term-section">
+    <h2>Spring 2025</h2>
+    <div class="course-grid">
+        <div class="course-card">
+            <div class="course-title">ECE 124</div>
+            <div class="course-desc">VHDL, FPGA, digital circuit design</div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-title">ECE 140</div>
+            <div class="course-desc">Linear circuit</div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-title">ECE 106</div>
+            <div class="course-desc">Electricity and magnetism</div>
+        </div>
+
+        <div class="course-card">
+            <div class="course-title">ECE 108</div>
+            <div class="course-desc">Logic, proof theory, model theory, combinatorics </div>
+        </div>
+        <div class="course-card">
+            <div class="course-title">MATH 119</div>
+            <div class="course-desc">Multivariable calculus</div>
+        </div>
+        <div class="course-card">
+            <div class="course-title">MATH 235</div>
+            <div class="course-desc">Linear algebra 2</div>
+        </div>
+        <div class="course-card">
+            <div class="course-title">ECE 192</div>
+            <div class="course-desc">cash flow, cost analysis</div>
+        </div>
+
+    </div>
+</div>
+
+
+
 </body>
+<a href="../index.html" class="nav-button">Main Page</a>
 </html>
