@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            margin-top: 60px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .term-section {
+            margin-bottom: 60px;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
+
+        .course-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-title {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+
+        }
+
+        .course-desc {
+            font-size: 24px;
+            color: #555;
+        }
+
+        .course-date {
+            font-size: 13px;
+            color: #888;
+            margin-top: 10px;
+        }
+        .nav-button{
+            display:inline-block;
+            margin-top:32px;
+            padding:14px 28px;
+            background-color:#0077cc;
+            color:#fff;
+            text-decoration:none;
+            border-radius:12px;
+            font-weight:600;
+            transition:background-color .2s ease, transform .15s ease;
+        }
+        .nav-button:hover{
+            background-color:#005fa3;
+            transform:translateY(-2px);
+        }
+        .nav-button:active{
+            transform:translateY(0);
+        }
+
+        @media(max-width:640px){
+            .card{padding:40px 24px}
+            h1{font-size:2.2rem}
+        }
+    </style>
+</head>
+<body>
+<h1>Projects</h1>
+
+<div class="term-section">
+    <div class="course-grid">
+        <div class="course-card">
+            <div class="course-title">User Management Portal</div>
+            <div class="course-desc">A full-stack User Management System built with Spring Boot and React (Ant Design Pro / UmiJS) that handles login,
+                logout, access control, user roles, and dynamic route protection.</div>
+            <a href="https://github.com/crankyjoke/System_management" >github link</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-title">Price spotter</div>
+            <div class="course-desc">PriceSpotterBackEnd is a Django‑based backend API that powers the PriceSpotter product‑comparison application.
+                It exposes RESTful endpoints for products, supports user authentication, and provides an admin dashboard for internal data management.</div>
+            <a href="https://github.com/crankyjoke/PriceSpotterBackEnd" >github link</a>
+        </div>
+
+
+        <div class="course-card">
+            <div class="course-title">Nebula‑Edge</div>
+            <div class="course-desc">Nebula‑Edge is a minimal peer‑to‑peer WebAssembly function mesh written in Go.
+                It lets you deploy and execute Wasm modules on the edge without central coordination by combining mDNS service discovery, libp2p‑gossipsub, and a tiny agent binary.</div>
+            <a href="https://github.com/crankyjoke/Nebula-Edge" >github link</a>
+        </div>
+
+        <div class="course-card">
+            <div class="course-title">five in a row</div>
+            <div class="course-desc">Five‑in‑a‑Row is a lightweight Python implementation of Gomoku with AI bot implemented with Alpha-beta pruning</div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+</body>
+<a href="../index.html" class="nav-button">Main Page</a>
+</html>
