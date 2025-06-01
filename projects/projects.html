@@ -5,21 +5,26 @@
     <title>My Courses</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 40px;
-            background-color: #f0f0f0;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #0a0a0a, #141414);
+            color: #ffffff;
+            min-height: 100vh;
         }
 
         h1 {
             text-align: center;
+            font-size: 3rem;
+            color: #00ffe1;
+            text-shadow: 0 0 10px #00ffe1, 0 0 20px #00ffe1;
             margin-bottom: 40px;
         }
 
         h2 {
             margin-top: 60px;
             margin-bottom: 20px;
-            color: #333;
+            color: #00ffe1;
         }
 
         .term-section {
@@ -28,57 +33,91 @@
 
         .course-grid {
             display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .course-card {
-            background-color: #fff;
+            background-color: #1a1a1a;
+            border: 1px solid #00ffe1;
             padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0, 255, 225, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 30px rgba(0, 255, 225, 0.3);
         }
 
         .course-title {
-            font-size: 40px;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            color: #ff00c8;
             text-align: center;
-
+            margin-bottom: 12px;
+            text-shadow: 0 0 6px #ff00c8;
         }
 
         .course-desc {
-            font-size: 24px;
-            color: #555;
+            font-size: 1rem;
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            text-align: left;
         }
 
-        .course-date {
-            font-size: 13px;
-            color: #888;
+        a[href^="https"] {
+            color: #00ffe1;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
             margin-top: 10px;
-        }
-        .nav-button{
-            display:inline-block;
-            margin-top:32px;
-            padding:14px 28px;
-            background-color:#0077cc;
-            color:#fff;
-            text-decoration:none;
-            border-radius:12px;
-            font-weight:600;
-            transition:background-color .2s ease, transform .15s ease;
-        }
-        .nav-button:hover{
-            background-color:#005fa3;
-            transform:translateY(-2px);
-        }
-        .nav-button:active{
-            transform:translateY(0);
+            transition: color 0.2s ease;
         }
 
-        @media(max-width:640px){
-            .card{padding:40px 24px}
-            h1{font-size:2.2rem}
+        a[href^="https"]:hover {
+            color: #ff00c8;
+            text-decoration: underline;
+        }
+
+        .nav-button {
+            display: inline-block;
+            margin: 40px auto 0;
+            padding: 14px 32px;
+            background-color: #00ffe1;
+            color: #000;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 0 15px #00ffe1;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            text-align: center;
+        }
+
+        .nav-button:hover {
+            background-color: #ff00c8;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px #ff00c8;
+        }
+
+        .nav-button:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .course-title {
+                font-size: 1.5rem;
+            }
+
+            .course-desc {
+                font-size: 0.95rem;
+            }
         }
     </style>
 </head>

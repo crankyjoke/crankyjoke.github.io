@@ -9,53 +9,114 @@
 
     <style>
 
-        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-        html,body{height:100%}
-        body{
-            font-family:'Inter',sans-serif;
-            background:#f9f9fb;
-            color:#222;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            padding:40px 20px;
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .card{
-            background:#fff;
-            border-radius:20px;
-            box-shadow:0 12px 28px rgba(0,0,0,.08);
-            max-width:900px;
-            width:100%;
-            padding:60px 50px;
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #0a0a0a, #141414);
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
         }
 
-        h1{font-size:2.75rem;font-weight:600;margin-bottom:24px;line-height:1.2;text-align:center}
-        p{line-height:1.6;font-size:1.05rem;margin-bottom:1.2em;color:#444}
-        ul{margin-left:1.2em;margin-bottom:1.2em}
-        li{margin-bottom:.5em}
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #00ffe1;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(0, 255, 225, 0.15);
+            max-width: 900px;
+            width: 100%;
+            padding: 60px 50px;
+            transition: box-shadow 0.3s ease;
+        }
 
-        .nav-button{
-            display:inline-block;
-            margin-top:32px;
-            padding:14px 28px;
-            background-color:#0077cc;
-            color:#fff;
-            text-decoration:none;
-            border-radius:12px;
-            font-weight:600;
-            transition:background-color .2s ease, transform .15s ease;
+        .card:hover {
+            box-shadow: 0 0 40px rgba(0, 255, 225, 0.25);
         }
-        .nav-button:hover{
-            background-color:#005fa3;
-            transform:translateY(-2px);
+
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            line-height: 1.2;
+            text-align: center;
+            color: #00ffe1;
+            text-shadow: 0 0 10px #00ffe1;
         }
-        .nav-button:active{
-            transform:translateY(0);
+
+        h2 {
+            margin-top: 2.6rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ff00c8;
+            text-shadow: 0 0 5px #ff00c8;
         }
-        @media(max-width:640px){
-            .card{padding:40px 24px}
-            h1{font-size:2.2rem}
+
+        p {
+            line-height: 1.6;
+            font-size: 1.05rem;
+            margin-bottom: 1.2em;
+            color: #ccc;
+        }
+
+        ul {
+            margin-left: 1.2em;
+            margin-bottom: 1.2em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            color: #ccc;
+        }
+
+        strong {
+            color: #ffffff;
+        }
+
+        em {
+            color: #ff00c8;
+        }
+
+        .nav-button {
+            display: inline-block;
+            margin-top: 32px;
+            padding: 14px 28px;
+            background-color: #00ffe1;
+            color: #000;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            box-shadow: 0 0 15px #00ffe1;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #ff00c8;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px #ff00c8;
+        }
+
+        .nav-button:active {
+            transform: translateY(0);
+        }
+
+        @media(max-width: 640px) {
+            .card {
+                padding: 40px 24px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
         }
     </style>
 </head>
