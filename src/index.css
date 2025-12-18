@@ -1,68 +1,134 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* GLOBAL / BASE */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+html,
 body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: #000000;
+  color: #00ff66;
+  font-family: "Consolas", "Fira Code", monospace;
+  /*overflow: auto;*/
+  overflow-x: hidden;
+
+}
+
+
+.no-scroll-page {
+  /* full screen minus the 80px padding from Layout */
+  height: calc(100vh - 140px);
+  width: 100vw;
+
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  background: radial-gradient(circle at top, #02220f 0, #000 55%);
+  color: #00ff66;
+  font-family: "Consolas", "Fira Code", monospace;
+
+  overflow: hidden;   /* nothing inside can scroll */
+  position: relative;
+  margin: 0;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+
+
+#root {
+  height: 100%;
+  width: 100%;
 }
 
-button {
+/* Turn off blue link colors */
+a {
+  color: #00ff66;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* TERMINAL WINDOW */
+
+.page {
+  height: calc(100vh - 56px); /* fits under navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #02220f 0, #000 55%);
+  overflow: hidden; /* extra safety */
+}
+
+.terminal {
+  width: 90%;
+  max-width: 900px;
+  min-height: 60vh;
+  background: #000000;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border: 2px solid #00ff66;
+  box-shadow: 0 0 20px rgba(0, 255, 102, 0.3);
+  padding: 1rem 1.3rem;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* fake title bar */
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.terminal-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #00ff66;
+  opacity: 0.7;
+}
+
+.terminal-title {
+  font-size: 0.9rem;
+  color: #00ff66;
+  opacity: 0.8;
+}
+
+/* text lines */
+
+.line {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.prompt {
+  color: #00ff66;
+}
+
+.output {
+  color: #c4f5d4;
+}
+
+/* blinking cursor */
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.1em;
+  margin-left: 2px;
+  background: #00ff66;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  50.01%,
+  100% {
+    opacity: 0;
   }
 }
+
