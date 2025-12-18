@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 const aboutParagraph = ""
 
 

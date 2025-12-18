@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
+
 import App from "./App";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -11,8 +12,9 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <BrowserRouter>
-            <Routes>
+        <HashRouter>
+
+        <Routes>
                 <Route element={<Layout />}>
                     <Route path="/" element={<App />} />
                     <Route path="/about" element={<About />} />
@@ -21,6 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                     <Route path="/courses" element={<Courses />} />
                 </Route>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
+
     </React.StrictMode>
 );
