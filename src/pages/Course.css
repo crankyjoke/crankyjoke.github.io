@@ -1,0 +1,116 @@
+/* PAGE LAYOUT */
+.course-page {
+    /* under navbar, and scrollable */
+    min-height: calc(100vh - 80px);
+    width: 100vw;
+
+    padding: 2rem 2.5rem;
+    box-sizing: border-box;
+
+    background: radial-gradient(circle at top, #02220f 0, #000 55%);
+    color: #00ff66;
+    font-family: "Consolas", "Fira Code", monospace;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.course-page h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* TERM BOX – looks like a grouped terminal section */
+.term-box {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    border-radius: 0; /* old style is square */
+
+    /* Retro 3D window border */
+    border: 2px solid #00ff66;
+    border-top-color: #baffda;     /* lighter highlight */
+    border-left-color: #baffda;    /* lighter highlight */
+    border-right-color: #003f1d;   /* dark shadow */
+    border-bottom-color: #003f1d;  /* dark shadow */
+
+    /* Background of old terminals/windows */
+    background: #000000;
+
+    /* Glow so it still fits your theme */
+    box-shadow: 0 0 18px rgba(0, 255, 102, 0.22);
+
+    font-family: "Consolas", "Fira Code", monospace;
+}
+
+
+.term-box h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #7bffb2;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border-bottom: 1px solid rgba(0, 255, 102, 0.35);
+    padding-bottom: 0.4rem;
+}
+
+/* COURSE BOX – small terminal panels */
+.course-box {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.9rem;
+    border-radius: 8px;
+
+    background: #000000;
+    border: 1px solid rgba(0, 255, 102, 0.4);
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.18);
+
+    transition:
+            transform 0.12s ease,
+            box-shadow 0.12s ease,
+            border-color 0.12s ease,
+            background 0.12s ease;
+}
+
+/* Hover animation */
+.course-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(0, 255, 102, 0.28);
+    border-color: #00ff66;
+    background: #020f08;
+}
+
+.course-box h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+    color: #00ff66;
+}
+
+.course-box p {
+    margin: 0.15rem 0;
+    font-size: 0.9rem;
+    color: #c4f5d4;
+}
+.term-title-bar {
+    background: #003f1d;  /* dark green */
+    color: #baffda;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #00ff66;
+}
+
+.term-close {
+    cursor: pointer;
+    color: #baffda;
+}
+
+.term-close:hover {
+    color: #00ff66;
+}
+
