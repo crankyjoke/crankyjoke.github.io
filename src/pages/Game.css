@@ -1,0 +1,45 @@
+/* Game.css */
+
+.game {
+    padding: 16px;
+}
+
+.controls {
+    margin-bottom: 16px;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.card {
+    width: 60px;
+    height: 84px;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 16px;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.card.selected {
+    border: 3px solid #2563eb;
+}
+
+.card.red {
+    color: #b91c1c;
+}
+
+.card.black {
+    color: #0f172a;
+}
