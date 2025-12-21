@@ -42,8 +42,8 @@ type RowProps = {
 };
 
 function Row({ rowIndex, arr, selected, onCardClick }: RowProps) {
-    const start = rowIndex * 10;
-    const slice = arr.slice(start, start + 10);
+    const start = rowIndex * 13;
+    const slice = arr.slice(start, start + 13);
 
     return (
         <div style={{ display: "flex", gap: 10, marginTop: 10 }}>
@@ -92,7 +92,7 @@ export default function Game() {
             setSelected(null);
             return;
         }
-        const sameColumn = (selected % 10) === (deckIndex % 10);
+        const sameColumn = (selected % 13) === (deckIndex % 13);
         if (!sameColumn) {
 
             setSelected(deckIndex);
@@ -104,15 +104,22 @@ export default function Game() {
 
 
     return (
-        <div style={{ padding: 16 }}>
-            <button onClick={() => { setDeck(initialize()); setSelected(null); }}>
-                Reshuffle
-            </button>
+        <div>
+            <h1>Application of Graph theory</h1>
+            <p>Try swapping the cards in each column so that each row has all A,2,3,4,5,6,7,8,9,10,J,Q,K</p>
 
-            <Row rowIndex={0} arr={deck} selected={selected} onCardClick={handleCardClick} />
-            <Row rowIndex={1} arr={deck} selected={selected} onCardClick={handleCardClick} />
-            <Row rowIndex={2} arr={deck} selected={selected} onCardClick={handleCardClick} />
+            <div style={{ padding: 16 }}>
+                <button onClick={() => { setDeck(initialize()); setSelected(null); }}>
+                    Reshuffle
+                </button>
 
+                <Row rowIndex={0} arr={deck} selected={selected} onCardClick={handleCardClick} />
+                <Row rowIndex={1} arr={deck} selected={selected} onCardClick={handleCardClick} />
+                <Row rowIndex={2} arr={deck} selected={selected} onCardClick={handleCardClick} />
+                <Row rowIndex={3} arr={deck} selected={selected} onCardClick={handleCardClick} />
+
+
+            </div>
         </div>
     );
 }
