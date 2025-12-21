@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "./Game.css"
+
 
 function shuffle<T>(array: T[]): T[] {
     for (let i = array.length - 1; i > 0; i--) {
@@ -79,9 +81,28 @@ function Row({ rowIndex, arr, selected, onCardClick }: RowProps) {
     );
 }
 
+
 export default function Game() {
     const [deck, setDeck] = useState<string[]>(() => initialize());
     const [selected, setSelected] = useState<number | null>(null);
+    const [status, setStatus] = useState("incomplete");
+    const VALUES = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
+
+    function checkRow(row_index: number, d: string[]): boolean {
+        const seen = Array(13).fill(false);
+
+        for (let i = 0; i < 13; i++) {
+            const card = d[row_index * 13 + i];
+            if (!card) return false;
+
+            const value = card.slice(0, -1);
+            const index = VALUES.indexOf(value);
+            if (index !== -1) seen[index] = true;
+        }
+
+        return seen.every(Boolean);
+    }
+
 
     function handleCardClick(deckIndex: number) {
         if (selected === null) {
@@ -92,19 +113,37 @@ export default function Game() {
             setSelected(null);
             return;
         }
+
         const sameColumn = (selected % 13) === (deckIndex % 13);
         if (!sameColumn) {
-
             setSelected(deckIndex);
             return;
         }
-        setDeck((d) => swap(d, selected, deckIndex));
+
+        setDeck((d) => {
+            const next = swap(d, selected, deckIndex);
+
+            if (
+                checkRow(0, next) &&
+                checkRow(1, next) &&
+                checkRow(2, next) &&
+                checkRow(3, next)
+            ) {
+                setStatus("complete");
+            } else {
+                setStatus("incomplete");
+            }
+
+            return next;
+        });
+
         setSelected(null);
     }
 
 
+
     return (
-        <div>
+        <div className="game">
             <h1>Application of Graph theory</h1>
             <p>Try swapping the cards in each column so that each row has all A,2,3,4,5,6,7,8,9,10,J,Q,K</p>
 
@@ -118,8 +157,8 @@ export default function Game() {
                 <Row rowIndex={2} arr={deck} selected={selected} onCardClick={handleCardClick} />
                 <Row rowIndex={3} arr={deck} selected={selected} onCardClick={handleCardClick} />
 
-
             </div>
+            <h2>{status}</h2>
         </div>
     );
 }

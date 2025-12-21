@@ -2,6 +2,7 @@
 
 .game {
     padding: 16px;
+    padding-left: 40px;
 }
 
 .controls {
@@ -43,3 +44,7 @@
 .card.black {
     color: #0f172a;
 }
+
+/*.game p {*/
+/*    padding-left: 60px;*/
+/*}*/
