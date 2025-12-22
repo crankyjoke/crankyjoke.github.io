@@ -129,9 +129,9 @@ export default function Game() {
                 checkRow(2, next) &&
                 checkRow(3, next)
             ) {
-                setStatus("complete");
+                setStatus("Completed!");
             } else {
-                setStatus("incomplete");
+                setStatus("Incomplete");
             }
 
             return next;
@@ -146,7 +146,7 @@ export default function Game() {
         <div className="game">
             <h1>Application of Graph theory</h1>
             <p>Try swapping the cards in each column so that each row has all A,2,3,4,5,6,7,8,9,10,J,Q,K</p>
-
+            <p>Note: It is always possible</p>
             <div style={{ padding: 16 }}>
                 <button onClick={() => { setDeck(initialize()); setSelected(null); }}>
                     Reshuffle
