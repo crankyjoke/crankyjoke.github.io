@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Game.css"
-
+import { solveByHall, applySwaps } from "./GameSolver.tsx";
 
 function shuffle<T>(array: T[]): T[] {
     for (let i = array.length - 1; i > 0; i--) {
@@ -148,7 +148,7 @@ export default function Game() {
             <p>Try swapping the cards in each column so that each row has all A,2,3,4,5,6,7,8,9,10,J,Q,K</p>
             <p>Note: It is always possible</p>
             <div style={{ padding: 16 }}>
-                <button onClick={() => { setDeck(initialize()); setSelected(null); }}>
+                <button onClick={() => { setDeck(initialize()); setSelected(null); setStatus("Incomplete") }}>
                     Reshuffle
                 </button>
 
@@ -159,6 +159,19 @@ export default function Game() {
 
             </div>
             <h2>{status}</h2>
+
+            <p>Cannot figure it out? Try clicking Solve</p>
+
+            <button
+                onClick={() => {
+                    const {solvedDeck, swaps} = solveByHall(deck);
+                    setDeck(solvedDeck);
+                    setSelected(null);
+                    setStatus("Completed!");
+                }}>
+
+                Solve
+            </button>
         </div>
     );
 }
