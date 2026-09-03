@@ -5,7 +5,7 @@ import {useState} from "react";
 type CourseProps = {
     course_name: string;
     course_code: string;
-    description: string;
+    description?: string;
 };
 
 function CoursesBox({ course_name, course_code, description }: CourseProps) {
@@ -24,7 +24,7 @@ type TermProps = {
 };
 
 function TermBox({ term, course_array }: TermProps) {
-    const [open, setOpen] = useState(true); // start opened
+    const [open, setOpen] = useState(false); // start opened
 
     return (
         <div className="term-box">
@@ -43,7 +43,6 @@ function TermBox({ term, course_array }: TermProps) {
                             key={course.course_code}
                             course_name={course.course_name}
                             course_code={course.course_code}
-                            description={course.description}
                         />
                     ))}
                 </div>
@@ -185,6 +184,44 @@ export default function Course() {
             description: "Algorithms and Data Structures",
         },
     ];
+    const spring2026Courses: CourseProps[] = [
+        {
+            course_name : "Quantum Physics 1",
+            course_code : "PHYS 234",
+        },
+    ];
+    const fall2026Courses: CourseProps[] = [
+        {
+          course_name: "The Mathematics of Public-Key Crytpography",
+            course_code: "CO 485"
+,        },
+        {
+          course_name: "Probability Theory and Statistics 1",
+            course_code : "ECE 203",
+        },
+        {
+            course_name: "Signals and Systems",
+            course_code : "ECE 207",
+        },
+        {
+            course_name: "Discrete Mathematics and Logic 2",
+            course_code : "ECE 208",
+        },
+        {
+            course_name: "Embedded Microprocessor Systems",
+            course_code : "ECE 224",
+        },
+        {
+            course_name: "Systems Programming and Concurrency",
+            course_code : "ECE 252",
+        },
+        {
+            course_name: "Instrumentation and Prototyping Laboratory",
+            course_code : "ECE 298",
+        },
+
+
+    ]
     return (
         <div className="course-page">
             <h1>Courses</h1>
@@ -194,7 +231,8 @@ export default function Course() {
             <TermBox term="Spring 2025" course_array={spring2025Courses} />
             <TermBox term="Fall 2025" course_array={fall2025Courses} />
             <TermBox term="Winter 2026" course_array={winter2026Courses}/>
-
+            <TermBox term="Spring 2026" course_array={spring2026Courses}/>
+            <TermBox term="Fall 2026" course_array={fall2026Courses}/>
         </div>
     );
 }
